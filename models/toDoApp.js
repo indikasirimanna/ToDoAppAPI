@@ -5,6 +5,7 @@ module.exports = class toDOApp {
     constructor(id, item){
         this.id = id;
         this.item = item;
+        
     }
 
     static ferchAll(){

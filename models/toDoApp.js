@@ -16,6 +16,8 @@ module.exports = class toDOApp {
         return db.execute('INSERT INTO toDoListTable (item) VALUES (?)', [item]);
     }
 
+
+
     static update (id, item){
         return db.execute('UPDATE toDoListTable SET item = ? WHERE id = ?', [item, id]);
     }

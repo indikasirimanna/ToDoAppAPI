@@ -1,3 +1,9 @@
+/* This is a Node.js module exporting two functions for user authentication: signup and login.
+signup function uses the bcrypt package to hash the user password and then saves the user details in the database using the User.save method. It returns a success message and HTTP status code 201 if the user is successfully registered, otherwise, it catches any errors and forwards them to the error handler middleware using next.
+login function receives the user email and password from the client, retrieves the corresponding user from the database using the User.find method, and then uses bcrypt to compare the input password with the hashed password of the retrieved user. If the comparison succeeds, a JSON web token is generated using the jwt package and returned to the client along with the user ID in the response body.
+If any errors occur during the authentication process, they are caught and forwarded to the error handler middleware.
+Both functions follow the Node.js asynchronous programming model and use try-catch blocks to handle errors. The code appears to be written in a clean and readable manner with clear and concise variable names. However, the code could be improved by using environment variables for sensitive information such as database connection strings and secret keys for token signing.
+ 25/02/2023 Indika Sirimanna*/
 const { validationResult } = require('express-validator');
 
 const bcrypt = require('bcryptjs');

@@ -1,3 +1,9 @@
+/* This code exports four functions related to a To-Do List application.
+The getAllToDoApp function retrieves all items from the To-Do List application by calling the ferchAll() function of the ToDoList model and sends the result as a JSON response to the client. If there is an error, it sets the error status to 500 and passes the error object to the next middleware.
+The postTodoList function creates a new item in the To-Do List application by calling the post() function of the ToDoList model with the request body item as a parameter and sends the response as a JSON object with a 201 status code. If there is an error, it sets the error status to 500 and passes the error object to the next middleware.
+The putTodoList function updates an existing item in the To-Do List application by calling the update() function of the ToDoList model with the request body ID and item as parameters and sends the response as a JSON object with a 201 status code. If there is an error, it sets the error status to 500 and passes the error object to the next middleware.
+The deleteTodoList function deletes an existing item in the To-Do List application by calling the delete() function of the ToDoList model with the request parameters ID as a parameter and sends the response as a JSON object with a 201 status code. If there is an error, it sets the error status to 500 and passes the error object to the next middleware.
+25/02/2023 Indika Sirimanna */
 const ToDoList =  require('../models/toDoApp');
 
 exports.getAllToDoApp = async (req, res, next) => {
